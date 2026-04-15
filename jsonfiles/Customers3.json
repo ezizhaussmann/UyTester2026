@@ -1,0 +1,17 @@
+{
+  "Customers" : [ {
+    "FirstName" : "kata",
+    "LastName" : "chan",
+    "Email" : "kata11@gg.fr",
+    "PhoneNumber" : "0981321457",
+    "PostCode" : "666333",
+    "City" : "Holkeick"
+  }, {
+    "FirstName" : "luffy",
+    "LastName" : "D",
+    "Email" : "luffy11@gg.fr",
+    "PhoneNumber" : "0981321458",
+    "PostCode" : "666111",
+    "City" : "Moncorwo"
+  } ]
+}

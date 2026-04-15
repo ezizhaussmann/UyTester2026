@@ -1,0 +1,19 @@
+{
+  "Customers": [
+    {
+  "firstName": "Katakuri",
+  "lastName": "Charlotte",
+  "email": "op41@gmail.com",
+  "phoneNumber": "+33987654321",
+  "pstCode": "3331 CC",
+  "City": "Paris"
+},
+{"firstName": "Prospero",
+"lastName": "Charlotte",
+"email": "op42@gmail.com",
+"phoneNumber": "+33987654323",
+"pstCode": "3331 CC",
+"City": "Paris"
+}
+]
+}

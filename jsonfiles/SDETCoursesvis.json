@@ -1,0 +1,26 @@
+{
+  "Services" : "SDET job Training",
+  "Expertise" : "Manuel&TestAutomation",
+  "Instructor" : "Dolqun Tarim",
+  "LinkedIn" : "https://www.unitedcoder.com",
+  "Url" : "https://www.seleniummaster.com",
+  "Courses" : {
+    "WebAutomation" : [ {
+      "price" : 100,
+      "course title" : "Cypress"
+    }, {
+      "price" : 200,
+      "course title" : "Selenium"
+    }, {
+      "price" : 300,
+      "course title" : "playWrite"
+    } ],
+    "Api" : [ {
+      "price" : 150,
+      "course title" : "Resr-Assured Api"
+    }, {
+      "price" : 50,
+      "course title" : "Soup-UI"
+    } ]
+  }
+}

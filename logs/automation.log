@@ -1,0 +1,10 @@
+2026-03-30 15:20:53 [main] INFO  org.tester.xxx_Play.TestMethod - Test de création du dossier logs...
+2026-03-30 15:25:05 [main] INFO  org.tester.uiautomatisation.CcLog - Lancement du test Log4j2 réussi !
+2026-03-30 15:42:37 [main] INFO  org.tester.l_ioExel.ReadColumnValue - Phone Number
+2026-03-30 15:48:07 [main] INFO  org.tester.l_ioExel.ReadColumnValue - Phone Number
+2026-03-30 15:48:07 [main] ERROR org.tester.l_ioExel.ReadColumnValue - Vérification échouée ! Attendu : Jean mais reçu : Phone Number
+2026-03-30 15:51:07 [main] INFO  org.tester.l_ioExel.ReadColumnValue - Phone Number
+2026-03-30 15:51:07 [main] ERROR org.tester.l_ioExel.ReadColumnValue - Vérification échouée ! Attendu : Jean mais reçu : Phone Number
+2026-03-30 15:51:52 [main] INFO  org.tester.l_ioExel.ReadColumnValue - Phone Number
+2026-03-30 15:51:52 [main] INFO  org.tester.l_ioExel.ReadColumnValue - Phone mushuning ichide barPhone
+2026-03-30 16:17:00 [main] INFO  org.tester.l_ioExel.LoggerTest -  Enfin

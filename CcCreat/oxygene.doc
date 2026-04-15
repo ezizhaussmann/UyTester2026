@@ -1,0 +1,1 @@
+`boolean mkdirs()` creates folders (directories). It can create both multi-level and single-level folders. If the folder to be created alreadyexists, creation will fail and return `false`. If the folder to be created does not exist, creation will succeed and return `true`.
