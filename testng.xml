@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!-- Suite principale TestNG -->
+<suite name="CubeCart Test Suite" verbose="1" parallel="none">
+
+    <!-- Paramètres globaux disponibles pour tous les tests -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="headless" value="false"/>
+
+    <!-- Test 1 : Ajout de client -->
+    <test name="Add Customer Tests">
+        <classes>
+            <class name="testng_tests.AddCustomerTestNG"/>
+        </classes>
+    </test>
+
+    <!-- Test 2 : Demo TestNG -->
+    <test name="TestNG Demo">
+        <classes>
+            <class name="testng_tests.TestNGDemo1"/>
+        </classes>
+    </test>
+
+</suite>

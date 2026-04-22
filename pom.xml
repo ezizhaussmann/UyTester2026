@@ -21,12 +21,20 @@
     </dependencyManagement>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>3.2.5</spring.boot.version>
         <cucumber.version>7.15.0</cucumber.version>
         <junit.version>5.10.2</junit.version>
+        <testng.version>7.9.0</testng.version>
+        <selenium.version>4.28.1</selenium.version>
+        <!-- Propriétés pour CI/CD -->
+        <webdriver.remote.url></webdriver.remote.url>
+        <webdriver.browser>chrome</webdriver.browser>
+        <test.suite>testng.xml</test.suite>
+        <ci.headless>true</ci.headless>
+        <ci.timeout>300</ci.timeout>
     </properties>
 
     <dependencies>
@@ -164,6 +172,14 @@
             <version>1.0.2</version>
         </dependency>
 
+        <!-- RestAssured Core -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.5.6</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -187,10 +203,152 @@
                     </includes>
                     <!-- Fichier TestNG XML pour lancer les suites -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>${test.suite}</suiteXmlFile>
                     </suiteXmlFiles>
+                    <!-- Configuration pour CI -->
+                    <systemPropertyVariables>
+                        <webdriver.remote.url>${webdriver.remote.url}</webdriver.remote.url>
+                        <webdriver.browser>${webdriver.browser}</webdriver.browser>
+                        <ci.headless>${ci.headless}</ci.headless>
+                        <ci.timeout>${ci.timeout}</ci.timeout>
+                    </systemPropertyVariables>
+                    <!-- Timeout pour les tests en CI -->
+                    <forkedProcessTimeoutInSeconds>${ci.timeout}</forkedProcessTimeoutInSeconds>
+                    <!-- Rapports détaillés -->
+                    <useFile>false</useFile>
+                    <trimStackTrace>false</trimStackTrace>
                 </configuration>
             </plugin>
+            
+            <!-- Plugin TestNG pour rapports HTML -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/test-reports</outputDirectory>
+                    <reportsDirectories>
+                        <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+                    </reportsDirectories>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-test-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Plugin pour rapports TestNG avancés -->
+            <plugin>
+                <groupId>org.uncommons</groupId>
+                <artifactId>reportng</artifactId>
+                <version>1.1.4</version>
+                <configuration>
+                    <outputDir>${project.build.directory}/testng-reports</outputDir>
+                    <testNgXml>${test.suite}</testNgXml>
+                    <showRuntimeAssertions>true</showRuntimeAssertions>
+                    <sortTestCase>false</sortTestCase>
+                    <escapeXml>false</escapeXml>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Plugin pour couverture de code -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.11</version>
+                <configuration>
+                    <excludes>
+                        <exclude>**/test/**</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Plugin pour qualité de code -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>false</failsOnError>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            
+            <!-- Plugin pour Docker -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.13</version>
+                <configuration>
+                    <repository>uytester2026/selenium-tests</repository>
+                    <tag>${project.version}</tag>
+                    <buildArgs>
+                        <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Plugin pour exécuter des tests en parallèle -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <parallel>methods</parallel>
+                    <threadCount>4</threadCount>
+                    <systemPropertyVariables>
+                        <webdriver.remote.url>${webdriver.remote.url}</webdriver.remote.url>
+                        <webdriver.browser>${webdriver.browser}</webdriver.browser>
+                    </systemPropertyVariables>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
