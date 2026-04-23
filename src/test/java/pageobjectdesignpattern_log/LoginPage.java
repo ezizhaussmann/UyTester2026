@@ -13,7 +13,7 @@ public class LoginPage {
 
     private static final Logger log = LogManager.getLogger(LoginPage.class);
 
-    ChromeDriver driver;
+   public ChromeDriver driver;
     FunctionLibrary functionLibrary;
 
     @FindBy(id = "username")

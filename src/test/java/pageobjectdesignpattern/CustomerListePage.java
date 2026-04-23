@@ -26,6 +26,9 @@ public class CustomerListePage {
     WebDriverWait wait;
 
     // Champ "First Name" — localisé par name="customer[first_name]"
+    @FindBy(css = "img.checkbox.cbs[rel='#customer_status']")
+    private WebElement statusCheckbox;
+
     @FindBy(name = "customer[first_name]")
     private WebElement firstNameField;
 
@@ -73,26 +76,19 @@ public class CustomerListePage {
      * Rafraîchit les locators via PageFactory après navigation
      */
     public void addCustomer(String firstName, String lastName, String email) {
-        // Rafraîchit les locators car la page a changé après navigation
         PageFactory.initElements(driver, this);
-
-        // Remplit les champs du formulaire
         functionLibrary.waitForElementPresent(firstNameField);
         firstNameField.sendKeys(firstName);
-
         functionLibrary.waitForElementPresent(lastNameField);
         lastNameField.sendKeys(lastName);
-
         functionLibrary.waitForElementPresent(emailField);
         emailField.sendKeys(email);
-
-        // Soumet le formulaire
         functionLibrary.waitForElementPresent(saveButton);
         saveButton.click();
-
         System.out.println("✅ Formulaire soumis, en attente de confirmation...");
         printCustomerInfo(firstName, lastName, email);
     }
+
 
     /**
      * Affiche les informations du client ajouté dans la console

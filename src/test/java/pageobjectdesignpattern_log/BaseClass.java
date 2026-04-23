@@ -10,7 +10,7 @@ public class BaseClass {
 
     private static final Logger log = LogManager.getLogger(BaseClass.class);
 
-    ChromeDriver driver;
+    public ChromeDriver driver;
     WebDriverWait wait;
     FunctionLibrary functionLibrary;
 
