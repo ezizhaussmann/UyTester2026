@@ -16,4 +16,8 @@ public class WebAutomation {
     // Getters
     public String getCourseTitle() { return courseTitle; }
     public int getPrice() { return price; }
+
+    // Setters
+    public void setCourseTitle(String courseTitle) { this.courseTitle = courseTitle; }
+    public void setPrice(int price) { this.price = price; }
 }

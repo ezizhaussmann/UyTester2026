@@ -1,0 +1,108 @@
+name: Selenium Tests CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Exécuter les tests tous les jours à 2h du matin
+    - cron: '0 2 * * *'
+
+jobs:
+  selenium-tests:
+    runs-on: ubuntu-latest
+    
+    services:
+      # Service Selenium Grid
+      selenium:
+        image: selenium/standalone-chrome:latest
+        ports:
+          - 4444:4444
+        options: --shm-size=2gb
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    - name: Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    
+    - name: Wait for Selenium service
+      run: |
+        echo "Waiting for Selenium service to be ready..."
+        for i in {1..30}; do
+          if curl -f http://localhost:4444/wd/hub/status; then
+            echo "Selenium service is ready!"
+            break
+          fi
+          echo "Attempt $i/30: Selenium not ready, waiting..."
+          sleep 2
+        done
+    
+    - name: Run Selenium tests
+      run: |
+        mvn clean test \
+          -Dwebdriver.remote.url=http://localhost:4444/wd/hub \
+          -Dwebdriver.browser=chrome \
+          -Dtest.suite=src/test/resources/testng.xml
+    
+    - name: Generate TestNG Report
+      if: always()
+      run: |
+        mkdir -p test-results
+        find . -name "*.html" -path "*/test-output/*" -exec cp {} test-results/ \;
+        find . -name "*.xml" -path "*/test-output/*" -exec cp {} test-results/ \;
+    
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: selenium-test-results
+        path: test-results/
+        retention-days: 30
+    
+    - name: Send Slack notification on failure
+      if: failure()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: failure
+        channel: '#testing'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}
+        text: |
+          🚨 Tests Selenium échoués !
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref }}
+          Commit: ${{ github.sha }}
+          Author: ${{ github.actor }}
+    
+    - name: Send Email notification on failure
+      if: failure()
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "🚨 Tests Selenium échoués - ${{ github.repository }}"
+        to: ${{ secrets.NOTIFICATION_EMAIL }}
+        from: "CI/CD Bot <ci@company.com>"
+        body: |
+          Les tests Selenium ont échoué dans le repository ${{ github.repository }}
+          
+          Détails:
+          - Branch: ${{ github.ref }}
+          - Commit: ${{ github.sha }}
+          - Author: ${{ github.actor }}
+          
+          Veuillez consulter les logs dans GitHub Actions pour plus de détails.

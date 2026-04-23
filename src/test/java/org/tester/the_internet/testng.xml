@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="The Internet Tests Suite" parallel="tests" thread-count="2">
+    
+    <!-- Tests pour la page d'accueil -->
+    <test name="Home Page Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.HomePageTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests pour la page de connexion -->
+    <test name="Login Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.LoginTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests pour la page Dropdown -->
+    <test name="Dropdown Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.DropdownTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests pour la page Checkboxes -->
+    <test name="Checkboxes Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.CheckboxesTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests pour la page Tables -->
+    <test name="Tables Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.TablesTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests pour la page Alerts -->
+    <test name="Alerts Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.AlertsTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests pour la page Add/Remove Elements -->
+    <test name="Add/Remove Elements Tests" enabled="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.AddRemoveElementsTest"/>
+        </classes>
+    </test>
+    
+    <!-- Tests Firefox pour validation multi-navigateurs -->
+    <test name="Firefox Cross-Browser Tests" enabled="false">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="org.tester.the_internet.HomePageTest"/>
+            <class name="org.tester.the_internet.LoginTest"/>
+            <class name="org.tester.the_internet.DropdownTest"/>
+        </classes>
+    </test>
+    
+    <!-- Suite de tests rapides pour développement -->
+    <test name="Quick Tests" enabled="false">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="org.tester.the_internet.HomePageTest">
+                <methods>
+                    <include name="testHomePageTitle"/>
+                    <include name="testHomePageHeader"/>
+                </methods>
+            </class>
+            <class name="org.tester.the_internet.LoginTest">
+                <methods>
+                    <include name="testLoginPageTitle"/>
+                    <include name="testLoginFormElementsExist"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>
