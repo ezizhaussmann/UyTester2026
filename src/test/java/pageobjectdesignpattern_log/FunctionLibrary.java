@@ -31,6 +31,6 @@ public class FunctionLibrary {
 
     public void waitForElementPresent(WebElement element) {
         log.debug("Attente de la visibilité de l'élément...");
-        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
     }
 }

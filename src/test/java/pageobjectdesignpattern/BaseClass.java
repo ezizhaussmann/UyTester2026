@@ -2,6 +2,7 @@ package pageobjectdesignpattern;
 
 import java.time.Duration;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -22,8 +23,9 @@ public class BaseClass {
      * Appelée dans @BeforeEach — initialise le browser avant chaque test
      */
     public void initBrowser(){
-        // Ouvre une nouvelle instance de Chrome
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-save-password-bubble", "--no-first-run");
+        driver = new ChromeDriver(options);
 
         // Maximise la fenêtre du navigateur
         driver.manage().window().maximize();

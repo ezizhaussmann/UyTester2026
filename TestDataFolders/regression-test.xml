@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Regression Test Suite">
+    <listeners>
+<!--        <listener class-name="org.testng.reporters.EmailableReporter2"/>-->
+        <listener class-name="org.testng.reporters.jq.Main"/>
+    </listeners>
+    <test name="Tests Package">
+        <groups>
+            <run>
+                <include name="regression"/>
+                <exclude name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="pageobjectdesignpattern.AddCustomerTest"/>
+        </classes>
+<!--        <classes>-->
+<!--            <class name="com.example.tests.RegressionTest1"/>-->
+<!--            <class name="com.example.tests.RegressionTest2"/>-->
+<!--            &lt;!&ndash; Add more regression test classes as needed &ndash;&gt;-->
+<!--        </classes>-->
+    </test>
+</suite>
