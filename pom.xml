@@ -187,6 +187,12 @@
             <version>7.9.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.12.0</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
@@ -242,28 +248,14 @@
                 </executions>
             </plugin>
             
-            <!-- Plugin pour rapports TestNG avancés -->
+            <!-- Configuration commentée - utiliser les listeners TestNG à la place
             <plugin>
                 <groupId>org.uncommons</groupId>
                 <artifactId>reportng</artifactId>
                 <version>1.1.4</version>
-                <configuration>
-                    <outputDir>${project.build.directory}/testng-reports</outputDir>
-                    <testNgXml>${test.suite}</testNgXml>
-                    <showRuntimeAssertions>true</showRuntimeAssertions>
-                    <sortTestCase>false</sortTestCase>
-                    <escapeXml>false</escapeXml>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
-            
+            -->
+
             <!-- Plugin pour couverture de code -->
             <plugin>
                 <groupId>org.jacoco</groupId>

@@ -1,9 +1,9 @@
 package pageobjectdesignpattern;
 
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -28,21 +28,21 @@ public class AddCustomerTest extends BaseClass {
      * L'ordre est important : initBrowser() doit être appelé en premier
      * car driver est null avant cette méthode
      */
-    @BeforeEach
+    @BeforeMethod(alwaysRun = true)
     public void setUp() {
         initBrowser();
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        quitBrowser();
+    }
+
+    @Test(groups = "regression")
+    public void addCustomerTest() {
         loginPage         = new LoginPage(driver);
         dashboardPage     = new DashboardPage(driver);
         customerListePage = new CustomerListePage(driver);
-    }
-
-    /**
-     * Test principal — ajoute un nouveau client avec des données générées par Faker
-     * Faker génère des données réalistes et aléatoires à chaque exécution
-     * Le timestamp garantit l'unicité de l'email
-     */
-    @Test
-    public void addCustomerTest() {
         // Génère des données de test aléatoires
         Faker faker     = new Faker();
         String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
@@ -70,13 +70,5 @@ public class AddCustomerTest extends BaseClass {
 
         // Étape 6 : Afficher les infos du client ajouté
         customerListePage.printCustomerInfo(firstName, lastName, email);
-    }
-
-    /**
-     * Exécuté après chaque test — ferme le browser
-     */
-    @AfterEach
-    public void tearDown() {
-        quitBrowser();
     }
 }

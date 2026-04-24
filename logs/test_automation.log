@@ -362,3 +362,95 @@
 2026-04-23 19:37:04 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
 2026-04-23 19:37:05 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
 2026-04-23 19:37:05 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:26:47 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Initialisation du browser...
+2026-04-24 19:26:49 [main] INFO  pageobjectdesignpattern_log.BaseClass - Browser initialisé et navigation vers CubeCart.
+2026-04-24 19:26:49 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Démarrage du test addCustomerTest
+2026-04-24 19:26:49 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:26:53 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-24 19:26:53 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-24 19:26:53 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:26:53 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Ajout du client : Kurt Heathcote - kurt.heathcote20260424192649@russel.com
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Formulaire soumis, en attente de confirmation...
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Informations du client ajouté :
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Prénom  : Kurt
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Nom     : Heathcote
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Email   : kurt.heathcote20260424192649@russel.com
+2026-04-24 19:26:54 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Client ajouté avec succès : Customer successfully added.
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Informations du client ajouté :
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Prénom  : Kurt
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Nom     : Heathcote
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Email   : kurt.heathcote20260424192649@russel.com
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Test addCustomerTest terminé avec succès.
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Fermeture du browser...
+2026-04-24 19:26:55 [main] INFO  pageobjectdesignpattern_log.BaseClass - Browser fermé.
+2026-04-24 19:30:09 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Initialisation du browser...
+2026-04-24 19:30:12 [main] INFO  pageobjectdesignpattern_log.BaseClass - Browser initialisé et navigation vers CubeCart.
+2026-04-24 19:30:12 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Démarrage du test addCustomerTest
+2026-04-24 19:30:12 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:30:16 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-24 19:30:16 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-24 19:30:16 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:30:16 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:30:17 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Ajout du client : Etsuko Morar - etsuko.morar20260424193012@jacobs.biz
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Formulaire soumis, en attente de confirmation...
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Informations du client ajouté :
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Prénom  : Etsuko
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Nom     : Morar
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Email   : etsuko.morar20260424193012@jacobs.biz
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Client ajouté avec succès : Customer successfully added.
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - Informations du client ajouté :
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Prénom  : Etsuko
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Nom     : Morar
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage -    Email   : etsuko.morar20260424193012@jacobs.biz
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.CustomerListePage - ========================================
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Test addCustomerTest terminé avec succès.
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.AddCustomerTest - Fermeture du browser...
+2026-04-24 19:30:18 [main] INFO  pageobjectdesignpattern_log.BaseClass - Browser fermé.
+2026-04-24 19:42:04 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:42:06 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-24 19:42:06 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-24 19:42:07 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:42:07 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:42:19 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:42:19 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:42:30 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:42:30 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:42:41 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:42:41 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:47:18 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:47:22 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-24 19:47:22 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-24 19:47:23 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:47:33 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:47:44 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:47:54 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:49:19 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:49:22 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-24 19:49:22 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-24 19:49:23 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:49:24 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:49:25 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:49:25 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:49:26 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:49:27 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:49:28 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:49:28 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:51:32 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-24 19:51:36 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-24 19:51:36 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-24 19:51:37 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:51:37 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:51:39 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:51:39 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:51:41 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:51:41 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-24 19:51:42 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
+2026-04-24 19:51:42 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.

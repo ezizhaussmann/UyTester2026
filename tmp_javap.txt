@@ -1,0 +1,344 @@
+Classfile /c:/Users/Admin/IdeaProjects/UyTester2026Clone/target/test-classes/pageobjectdesignpattern/AddCustomerTest.class
+  Last modified 24 avr. 2026; size 3074 bytes
+  SHA-256 checksum e3c8a9211734fd021eb73b9788d038260b38fd0ab3c97deab4d701c9a46cd314
+  Compiled from "AddCustomerTest.java"
+public class pageobjectdesignpattern.AddCustomerTest extends pageobjectdesignpattern.BaseClass
+  minor version: 0
+  major version: 65
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #8                          // pageobjectdesignpattern/AddCustomerTest
+  super_class: #2                         // pageobjectdesignpattern/BaseClass
+  interfaces: 0, fields: 3, methods: 4, attributes: 3
+Constant pool:
+    #1 = Methodref          #2.#3         // pageobjectdesignpattern/BaseClass."<init>":()V
+    #2 = Class              #4            // pageobjectdesignpattern/BaseClass
+    #3 = NameAndType        #5:#6         // "<init>":()V
+    #4 = Utf8               pageobjectdesignpattern/BaseClass
+    #5 = Utf8               <init>
+    #6 = Utf8               ()V
+    #7 = Methodref          #8.#9         // pageobjectdesignpattern/AddCustomerTest.initBrowser:()V
+    #8 = Class              #10           // pageobjectdesignpattern/AddCustomerTest
+    #9 = NameAndType        #11:#6        // initBrowser:()V
+   #10 = Utf8               pageobjectdesignpattern/AddCustomerTest
+   #11 = Utf8               initBrowser
+   #12 = Methodref          #8.#13        // pageobjectdesignpattern/AddCustomerTest.quitBrowser:()V
+   #13 = NameAndType        #14:#6        // quitBrowser:()V
+   #14 = Utf8               quitBrowser
+   #15 = Class              #16           // pageobjectdesignpattern/LoginPage
+   #16 = Utf8               pageobjectdesignpattern/LoginPage
+   #17 = Fieldref           #8.#18        // pageobjectdesignpattern/AddCustomerTest.driver:Lorg/openqa/selenium/chrome/ChromeDriver;
+   #18 = NameAndType        #19:#20       // driver:Lorg/openqa/selenium/chrome/ChromeDriver;
+   #19 = Utf8               driver
+   #20 = Utf8               Lorg/openqa/selenium/chrome/ChromeDriver;
+   #21 = Methodref          #15.#22       // pageobjectdesignpattern/LoginPage."<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+   #22 = NameAndType        #5:#23        // "<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+   #23 = Utf8               (Lorg/openqa/selenium/chrome/ChromeDriver;)V
+   #24 = Fieldref           #8.#25        // pageobjectdesignpattern/AddCustomerTest.loginPage:Lpageobjectdesignpattern/LoginPage;
+   #25 = NameAndType        #26:#27       // loginPage:Lpageobjectdesignpattern/LoginPage;
+   #26 = Utf8               loginPage
+   #27 = Utf8               Lpageobjectdesignpattern/LoginPage;
+   #28 = Class              #29           // pageobjectdesignpattern/DashboardPage
+   #29 = Utf8               pageobjectdesignpattern/DashboardPage
+   #30 = Methodref          #28.#22       // pageobjectdesignpattern/DashboardPage."<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+   #31 = Fieldref           #8.#32        // pageobjectdesignpattern/AddCustomerTest.dashboardPage:Lpageobjectdesignpattern/DashboardPage;
+   #32 = NameAndType        #33:#34       // dashboardPage:Lpageobjectdesignpattern/DashboardPage;
+   #33 = Utf8               dashboardPage
+   #34 = Utf8               Lpageobjectdesignpattern/DashboardPage;
+   #35 = Class              #36           // pageobjectdesignpattern/CustomerListePage
+   #36 = Utf8               pageobjectdesignpattern/CustomerListePage
+   #37 = Methodref          #35.#22       // pageobjectdesignpattern/CustomerListePage."<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+   #38 = Fieldref           #8.#39        // pageobjectdesignpattern/AddCustomerTest.customerListePage:Lpageobjectdesignpattern/CustomerListePage;
+   #39 = NameAndType        #40:#41       // customerListePage:Lpageobjectdesignpattern/CustomerListePage;
+   #40 = Utf8               customerListePage
+   #41 = Utf8               Lpageobjectdesignpattern/CustomerListePage;
+   #42 = Class              #43           // com/github/javafaker/Faker
+   #43 = Utf8               com/github/javafaker/Faker
+   #44 = Methodref          #42.#3        // com/github/javafaker/Faker."<init>":()V
+   #45 = Methodref          #46.#47       // java/time/LocalDateTime.now:()Ljava/time/LocalDateTime;
+   #46 = Class              #48           // java/time/LocalDateTime
+   #47 = NameAndType        #49:#50       // now:()Ljava/time/LocalDateTime;
+   #48 = Utf8               java/time/LocalDateTime
+   #49 = Utf8               now
+   #50 = Utf8               ()Ljava/time/LocalDateTime;
+   #51 = String             #52           // yyyyMMddHHmmss
+   #52 = Utf8               yyyyMMddHHmmss
+   #53 = Methodref          #54.#55       // java/time/format/DateTimeFormatter.ofPattern:(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;
+   #54 = Class              #56           // java/time/format/DateTimeFormatter
+   #55 = NameAndType        #57:#58       // ofPattern:(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;
+   #56 = Utf8               java/time/format/DateTimeFormatter
+   #57 = Utf8               ofPattern
+   #58 = Utf8               (Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;
+   #59 = Methodref          #46.#60       // java/time/LocalDateTime.format:(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+   #60 = NameAndType        #61:#62       // format:(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+   #61 = Utf8               format
+   #62 = Utf8               (Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+   #63 = Methodref          #42.#64       // com/github/javafaker/Faker.name:()Lcom/github/javafaker/Name;
+   #64 = NameAndType        #65:#66       // name:()Lcom/github/javafaker/Name;
+   #65 = Utf8               name
+   #66 = Utf8               ()Lcom/github/javafaker/Name;
+   #67 = Methodref          #68.#69       // com/github/javafaker/Name.firstName:()Ljava/lang/String;
+   #68 = Class              #70           // com/github/javafaker/Name
+   #69 = NameAndType        #71:#72       // firstName:()Ljava/lang/String;
+   #70 = Utf8               com/github/javafaker/Name
+   #71 = Utf8               firstName
+   #72 = Utf8               ()Ljava/lang/String;
+   #73 = Methodref          #68.#74       // com/github/javafaker/Name.lastName:()Ljava/lang/String;
+   #74 = NameAndType        #75:#72       // lastName:()Ljava/lang/String;
+   #75 = Utf8               lastName
+   #76 = Methodref          #77.#78       // java/lang/String.toLowerCase:()Ljava/lang/String;
+   #77 = Class              #79           // java/lang/String
+   #78 = NameAndType        #80:#72       // toLowerCase:()Ljava/lang/String;
+   #79 = Utf8               java/lang/String
+   #80 = Utf8               toLowerCase
+   #81 = Methodref          #42.#82       // com/github/javafaker/Faker.internet:()Lcom/github/javafaker/Internet;
+   #82 = NameAndType        #83:#84       // internet:()Lcom/github/javafaker/Internet;
+   #83 = Utf8               internet
+   #84 = Utf8               ()Lcom/github/javafaker/Internet;
+   #85 = Methodref          #86.#87       // com/github/javafaker/Internet.domainName:()Ljava/lang/String;
+   #86 = Class              #88           // com/github/javafaker/Internet
+   #87 = NameAndType        #89:#72       // domainName:()Ljava/lang/String;
+   #88 = Utf8               com/github/javafaker/Internet
+   #89 = Utf8               domainName
+   #90 = InvokeDynamic      #0:#91        // #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #91 = NameAndType        #92:#93       // makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #92 = Utf8               makeConcatWithConstants
+   #93 = Utf8               (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+   #94 = String             #95           // cubecart
+   #95 = Utf8               cubecart
+   #96 = Methodref          #15.#97       // pageobjectdesignpattern/LoginPage.login:(Ljava/lang/String;Ljava/lang/String;)V
+   #97 = NameAndType        #98:#99       // login:(Ljava/lang/String;Ljava/lang/String;)V
+   #98 = Utf8               login
+   #99 = Utf8               (Ljava/lang/String;Ljava/lang/String;)V
+  #100 = Methodref          #28.#101      // pageobjectdesignpattern/DashboardPage.clickCustomerList:()V
+  #101 = NameAndType        #102:#6       // clickCustomerList:()V
+  #102 = Utf8               clickCustomerList
+  #103 = Methodref          #28.#104      // pageobjectdesignpattern/DashboardPage.clickAddCustomer:()V
+  #104 = NameAndType        #105:#6       // clickAddCustomer:()V
+  #105 = Utf8               clickAddCustomer
+  #106 = Methodref          #35.#107      // pageobjectdesignpattern/CustomerListePage.addCustomer:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  #107 = NameAndType        #108:#109     // addCustomer:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  #108 = Utf8               addCustomer
+  #109 = Utf8               (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  #110 = Methodref          #35.#111      // pageobjectdesignpattern/CustomerListePage.verifyCustomerAdded:()V
+  #111 = NameAndType        #112:#6       // verifyCustomerAdded:()V
+  #112 = Utf8               verifyCustomerAdded
+  #113 = Methodref          #35.#114      // pageobjectdesignpattern/CustomerListePage.printCustomerInfo:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  #114 = NameAndType        #115:#109     // printCustomerInfo:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  #115 = Utf8               printCustomerInfo
+  #116 = Utf8               Code
+  #117 = Utf8               LineNumberTable
+  #118 = Utf8               LocalVariableTable
+  #119 = Utf8               this
+  #120 = Utf8               Lpageobjectdesignpattern/AddCustomerTest;
+  #121 = Utf8               setUp
+  #122 = Utf8               RuntimeVisibleAnnotations
+  #123 = Utf8               Lorg/testng/annotations/BeforeMethod;
+  #124 = Utf8               tearDown
+  #125 = Utf8               Lorg/testng/annotations/AfterMethod;
+  #126 = Utf8               addCustomerTest
+  #127 = Utf8               faker
+  #128 = Utf8               Lcom/github/javafaker/Faker;
+  #129 = Utf8               timestamp
+  #130 = Utf8               Ljava/lang/String;
+  #131 = Utf8               email
+  #132 = Utf8               Lorg/testng/annotations/Test;
+  #133 = Utf8               groups
+  #134 = Utf8               regression
+  #135 = Utf8               SourceFile
+  #136 = Utf8               AddCustomerTest.java
+  #137 = Utf8               BootstrapMethods
+  #138 = String             #139          // \u0001.\u0001\u0001@\u0001
+  #139 = Utf8               \u0001.\u0001\u0001@\u0001
+  #140 = MethodHandle       6:#141        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #141 = Methodref          #142.#143     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #142 = Class              #144          // java/lang/invoke/StringConcatFactory
+  #143 = NameAndType        #92:#145      // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #144 = Utf8               java/lang/invoke/StringConcatFactory
+  #145 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #146 = Utf8               InnerClasses
+  #147 = Class              #148          // java/lang/invoke/MethodHandles$Lookup
+  #148 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #149 = Class              #150          // java/lang/invoke/MethodHandles
+  #150 = Utf8               java/lang/invoke/MethodHandles
+  #151 = Utf8               Lookup
+{
+  pageobjectdesignpattern.LoginPage loginPage;
+    descriptor: Lpageobjectdesignpattern/LoginPage;
+    flags: (0x0000)
+
+  pageobjectdesignpattern.DashboardPage dashboardPage;
+    descriptor: Lpageobjectdesignpattern/DashboardPage;
+    flags: (0x0000)
+
+  pageobjectdesignpattern.CustomerListePage customerListePage;
+    descriptor: Lpageobjectdesignpattern/CustomerListePage;
+    flags: (0x0000)
+
+  public pageobjectdesignpattern.AddCustomerTest();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method pageobjectdesignpattern/BaseClass."<init>":()V
+         4: return
+      LineNumberTable:
+        line 15: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpageobjectdesignpattern/AddCustomerTest;
+
+  public void setUp();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #7                  // Method initBrowser:()V
+         4: return
+      LineNumberTable:
+        line 33: 0
+        line 34: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpageobjectdesignpattern/AddCustomerTest;
+    RuntimeVisibleAnnotations:
+      0: #123()
+        org.testng.annotations.BeforeMethod
+
+  public void tearDown();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokevirtual #12                 // Method quitBrowser:()V
+         4: return
+      LineNumberTable:
+        line 38: 0
+        line 39: 4
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lpageobjectdesignpattern/AddCustomerTest;
+    RuntimeVisibleAnnotations:
+      0: #125()
+        org.testng.annotations.AfterMethod
+
+  public void addCustomerTest();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=6, args_size=1
+         0: aload_0
+         1: new           #15                 // class pageobjectdesignpattern/LoginPage
+         4: dup
+         5: aload_0
+         6: getfield      #17                 // Field driver:Lorg/openqa/selenium/chrome/ChromeDriver;
+         9: invokespecial #21                 // Method pageobjectdesignpattern/LoginPage."<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+        12: putfield      #24                 // Field loginPage:Lpageobjectdesignpattern/LoginPage;
+        15: aload_0
+        16: new           #28                 // class pageobjectdesignpattern/DashboardPage
+        19: dup
+        20: aload_0
+        21: getfield      #17                 // Field driver:Lorg/openqa/selenium/chrome/ChromeDriver;
+        24: invokespecial #30                 // Method pageobjectdesignpattern/DashboardPage."<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+        27: putfield      #31                 // Field dashboardPage:Lpageobjectdesignpattern/DashboardPage;
+        30: aload_0
+        31: new           #35                 // class pageobjectdesignpattern/CustomerListePage
+        34: dup
+        35: aload_0
+        36: getfield      #17                 // Field driver:Lorg/openqa/selenium/chrome/ChromeDriver;
+        39: invokespecial #37                 // Method pageobjectdesignpattern/CustomerListePage."<init>":(Lorg/openqa/selenium/chrome/ChromeDriver;)V
+        42: putfield      #38                 // Field customerListePage:Lpageobjectdesignpattern/CustomerListePage;
+        45: new           #42                 // class com/github/javafaker/Faker
+        48: dup
+        49: invokespecial #44                 // Method com/github/javafaker/Faker."<init>":()V
+        52: astore_1
+        53: invokestatic  #45                 // Method java/time/LocalDateTime.now:()Ljava/time/LocalDateTime;
+        56: ldc           #51                 // String yyyyMMddHHmmss
+        58: invokestatic  #53                 // Method java/time/format/DateTimeFormatter.ofPattern:(Ljava/lang/String;)Ljava/time/format/DateTimeFormatter;
+        61: invokevirtual #59                 // Method java/time/LocalDateTime.format:(Ljava/time/format/DateTimeFormatter;)Ljava/lang/String;
+        64: astore_2
+        65: aload_1
+        66: invokevirtual #63                 // Method com/github/javafaker/Faker.name:()Lcom/github/javafaker/Name;
+        69: invokevirtual #67                 // Method com/github/javafaker/Name.firstName:()Ljava/lang/String;
+        72: astore_3
+        73: aload_1
+        74: invokevirtual #63                 // Method com/github/javafaker/Faker.name:()Lcom/github/javafaker/Name;
+        77: invokevirtual #73                 // Method com/github/javafaker/Name.lastName:()Ljava/lang/String;
+        80: astore        4
+        82: aload_3
+        83: invokevirtual #76                 // Method java/lang/String.toLowerCase:()Ljava/lang/String;
+        86: aload         4
+        88: invokevirtual #76                 // Method java/lang/String.toLowerCase:()Ljava/lang/String;
+        91: aload_2
+        92: aload_1
+        93: invokevirtual #81                 // Method com/github/javafaker/Faker.internet:()Lcom/github/javafaker/Internet;
+        96: invokevirtual #85                 // Method com/github/javafaker/Internet.domainName:()Ljava/lang/String;
+        99: invokedynamic #90,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+       104: astore        5
+       106: aload_0
+       107: getfield      #24                 // Field loginPage:Lpageobjectdesignpattern/LoginPage;
+       110: ldc           #94                 // String cubecart
+       112: ldc           #94                 // String cubecart
+       114: invokevirtual #96                 // Method pageobjectdesignpattern/LoginPage.login:(Ljava/lang/String;Ljava/lang/String;)V
+       117: aload_0
+       118: getfield      #31                 // Field dashboardPage:Lpageobjectdesignpattern/DashboardPage;
+       121: invokevirtual #100                // Method pageobjectdesignpattern/DashboardPage.clickCustomerList:()V
+       124: aload_0
+       125: getfield      #31                 // Field dashboardPage:Lpageobjectdesignpattern/DashboardPage;
+       128: invokevirtual #103                // Method pageobjectdesignpattern/DashboardPage.clickAddCustomer:()V
+       131: aload_0
+       132: getfield      #38                 // Field customerListePage:Lpageobjectdesignpattern/CustomerListePage;
+       135: aload_3
+       136: aload         4
+       138: aload         5
+       140: invokevirtual #106                // Method pageobjectdesignpattern/CustomerListePage.addCustomer:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+       143: aload_0
+       144: getfield      #38                 // Field customerListePage:Lpageobjectdesignpattern/CustomerListePage;
+       147: invokevirtual #110                // Method pageobjectdesignpattern/CustomerListePage.verifyCustomerAdded:()V
+       150: aload_0
+       151: getfield      #38                 // Field customerListePage:Lpageobjectdesignpattern/CustomerListePage;
+       154: aload_3
+       155: aload         4
+       157: aload         5
+       159: invokevirtual #113                // Method pageobjectdesignpattern/CustomerListePage.printCustomerInfo:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+       162: return
+      LineNumberTable:
+        line 43: 0
+        line 44: 15
+        line 45: 30
+        line 47: 45
+        line 48: 53
+        line 49: 65
+        line 50: 73
+        line 53: 82
+        line 54: 93
+        line 57: 106
+        line 60: 117
+        line 63: 124
+        line 66: 131
+        line 69: 143
+        line 72: 150
+        line 73: 162
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0     163     0  this   Lpageobjectdesignpattern/AddCustomerTest;
+           53     110     1 faker   Lcom/github/javafaker/Faker;
+           65      98     2 timestamp   Ljava/lang/String;
+           73      90     3 firstName   Ljava/lang/String;
+           82      81     4 lastName   Ljava/lang/String;
+          106      57     5 email   Ljava/lang/String;
+    RuntimeVisibleAnnotations:
+      0: #132(#133=[s#134])
+        org.testng.annotations.Test(
+          groups=["regression"]
+        )
+}
+SourceFile: "AddCustomerTest.java"
+BootstrapMethods:
+  0: #140 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #138 \u0001.\u0001\u0001@\u0001
+InnerClasses:
+  public static final #151= #147 of #149; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

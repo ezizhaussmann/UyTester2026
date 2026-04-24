@@ -1,0 +1,10 @@
+{
+  "Customers" : [ {
+    "firstName" : "Charlie",
+    "lastName" : "Garcia",
+    "email" : "charlie.garcia@test.com",
+    "phoneNumber" : "+33333333333",
+    "pstCode" : "33000",
+    "City" : "Bordeaux"
+  } ]
+}

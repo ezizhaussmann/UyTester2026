@@ -107,8 +107,9 @@ public class CustomerListePage {
      * Utilise assertTrue — le test échoue si le message est absent
      */
     public void verifyCustomerAdded() {
-        wait.until(ExpectedConditions.visibilityOf(successMessage));
-        String actualMessage = successMessage.getText();
+        WebElement msg = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                org.openqa.selenium.By.cssSelector("div.success")));
+        String actualMessage = msg.getText();
         assertTrue(actualMessage.contains("Customer successfully added."),
                 "❌ Message attendu 'Customer successfully added.' mais reçu : " + actualMessage);
         System.out.println("✅ Client ajouté avec succès : " + actualMessage);
@@ -118,8 +119,9 @@ public class CustomerListePage {
      * Vérifie que le message de succès contient le texte attendu (version paramétrable)
      */
     public void verifyCustomerAdded(String expectedMessage) {
-        wait.until(ExpectedConditions.visibilityOf(successMessage));
-        String actualMessage = successMessage.getText();
+        WebElement msg = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                org.openqa.selenium.By.cssSelector("div.success")));
+        String actualMessage = msg.getText();
         assertTrue(actualMessage.contains(expectedMessage),
                 "❌ Message attendu : '" + expectedMessage + "' mais reçu : '" + actualMessage + "'");
         System.out.println("✅ Client ajouté avec succès : " + actualMessage);
