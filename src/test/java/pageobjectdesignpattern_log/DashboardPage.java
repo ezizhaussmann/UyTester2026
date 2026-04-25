@@ -19,6 +19,8 @@ public class DashboardPage {
 
     @FindBy(css = "a[href*='logout']")
     WebElement logoutLink;
+    @FindBy(id = "nav_products")
+    WebElement productsLink;
 
     public DashboardPage(ChromeDriver driver) {
         this.driver = driver;
@@ -35,6 +37,11 @@ public class DashboardPage {
     public void clickAddCustomer() {
         log.info("Navigation vers le formulaire Add Customer.");
         driver.get("https://demo.cubecart.com/admin_5xArPd.php?_g=customers&action=add");
+    }
+    public void clickProducts() {
+        log.info("Navigation vers Products.");
+        functionLibrary.waitForElementPresent(productsLink);
+        productsLink.click();
     }
 
     public void clickLogout() {

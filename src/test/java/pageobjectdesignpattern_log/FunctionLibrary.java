@@ -1,5 +1,6 @@
 package pageobjectdesignpattern_log;
 
+import com.github.javafaker.Faker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -14,10 +15,12 @@ public class FunctionLibrary {
 
     ChromeDriver driver;
     WebDriverWait wait;
+    Faker faker;
 
     public FunctionLibrary(ChromeDriver driver) {
         this.driver = driver;
         this.wait   = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.faker  = new Faker();
     }
 
     public void sleep(int seconds) {
@@ -33,4 +36,22 @@ public class FunctionLibrary {
         log.debug("Attente de la visibilité de l'élément...");
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(element)));
     }
+    public String generateFakeProductName() {
+        faker = new Faker();
+
+        return faker.commerce().productName() + "_" + System.currentTimeMillis();
+    }
+    public String generateFakeProductCode() {
+        faker = new Faker();
+        return faker.code().ean8() + "_" + System.currentTimeMillis();
+    }
+    public String generateFakeStockLevel() {
+        faker = new Faker();
+        return  String.valueOf(faker.number().numberBetween(1, 100));
+    }
+    public void waitForAlertPresent() {
+        log.debug("Attente de l'alerte...");
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
+
 }
