@@ -454,3 +454,16 @@
 2026-04-24 19:51:41 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
 2026-04-24 19:51:42 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Customer List.
 2026-04-24 19:51:42 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers le formulaire Add Customer.
+2026-04-26 02:33:11 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-26 02:33:15 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-26 02:33:15 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-26 02:33:15 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Products.
+2026-04-26 02:36:25 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-26 02:36:28 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-26 02:36:28 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-26 02:36:28 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Products.
+2026-04-26 02:38:56 [main] INFO  pageobjectdesignpattern_log.LoginPage - Tentative de connexion avec l'utilisateur : cubecart
+2026-04-26 02:39:00 [main] INFO  pageobjectdesignpattern_log.LoginPage - Alerte Chrome fermée avec ENTER.
+2026-04-26 02:39:00 [main] INFO  pageobjectdesignpattern_log.LoginPage - Connexion réussie.
+2026-04-26 02:39:00 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Products.
+2026-04-26 02:39:03 [main] INFO  pageobjectdesignpattern_log.DashboardPage - Navigation vers Products.

@@ -15,32 +15,32 @@ public class ArrayDemo2 {
     ChromeDriver driver;
     LoginPage loginPage;
     DashboardPage dashboardPage;
-    @DataProvider
-    public Object[][] getData(){
-        Object[][] data = {{"cubecart","cubecart"},{"cubecart","cubecart"},{"cubecart","cubecart"}};
-
-        return data;
-    }
-    @Test(dataProvider = "getData")
-    public void LoginTest(String username, String password){
-        driver.get("https://demo.cubecart.com/admin_5xArPd.php");
-        driver
-        .manage().window().maximize();
-        loginPage.login(username,password);
-        dashboardPage.clickLogout();
-
-    }
     @BeforeClass
-    public void beforeclass(){
+    public void beforeclass() {
         driver = new ChromeDriver();
-        loginPage = new LoginPage(driver);
+        driver.manage().window().maximize();
+        loginPage     = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
-
-
     }
-    @AfterClass
-    public void afterclass(){
-        driver.quit();
 
+    @DataProvider
+    public Object[][] getData() {
+        return new Object[][]{
+                {"cubecart", "cubecart"},
+                {"cubecart", "cubecart"},
+                {"cubecart", "cubecart"}
+        };
+    }
+
+    @Test(dataProvider = "getData")
+    public void LoginTest(String username, String password) {
+        driver.get("https://demo.cubecart.com/admin_5xArPd.php");
+        loginPage.login(username, password);
+        dashboardPage.clickLogout();
+    }
+
+    @AfterClass
+    public void afterclass() {
+        driver.quit();
     }
 }

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapports de Test - Extent & Allure</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; color: #333; border-bottom: 2px solid #007bff; padding-bottom: 20px; margin-bottom: 30px; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        .warning { background-color: #fff3cd; border-color: #ffeaa7; }
+        .code { background-color: #f8f9fa; padding: 10px; border-radius: 4px; font-family: monospace; margin: 10px 0; }
+        .btn { display: inline-block; padding: 10px 20px; margin: 5px; text-decoration: none; border-radius: 4px; color: white; }
+        .btn-primary { background-color: #007bff; }
+        .btn-success { background-color: #28a745; }
+        .btn-info { background-color: #17a2b8; }
+        ul { list-style-type: none; padding: 0; }
+        li { padding: 8px; margin: 5px 0; background-color: #f8f9fa; border-left: 4px solid #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Configuration des Rapports de Test</h1>
+            <p>Extent Reports & Allure Reports intégrés avec succès</p>
+        </div>
+
+        <div class="section success">
+            <h2>✅ Configuration Terminée</h2>
+            <p>Votre projet est maintenant configuré avec :</p>
+            <ul>
+                <li><strong>Extent Reports 5.1.2</strong> - Rapports HTML détaillés</li>
+                <li><strong>Allure Reports 2.29.1</strong> - Rapports interactifs avancés</li>
+                <li><strong>Listeners TestNG</strong> - Intégration automatique</li>
+                <li><strong>Captures d'écran</strong> - En cas d'échec des tests</li>
+            </ul>
+        </div>
+
+        <div class="section info">
+            <h2>📁 Fichiers Créés</h2>
+            <ul>
+                <li><code>ExtentReportManager.java</code> - Gestionnaire des rapports Extent</li>
+                <li><code>ReportListener.java</code> - Listener unifié pour les deux rapports</li>
+                <li><code>SimpleReportTest.java</code> - Test de démonstration</li>
+                <li><code>test-reports.xml</code> - Configuration TestNG</li>
+                <li><code>allure.properties</code> - Configuration Allure</li>
+            </ul>
+        </div>
+
+        <div class="section warning">
+            <h2>🚀 Comment Exécuter les Tests</h2>
+            
+            <h3>1. Exécuter les tests avec Maven :</h3>
+            <div class="code">mvn clean test -Dsurefire.suiteXmlFiles=test-reports.xml</div>
+            
+            <h3>2. Voir le rapport Extent :</h3>
+            <div class="code">Ouvrir : test-output/ExtentReport.html</div>
+            
+            <h3>3. Générer et voir le rapport Allure :</h3>
+            <div class="code">
+                mvn allure:serve<br>
+                # ou<br>
+                mvn allure:report<br>
+                # puis ouvrir : target/site/allure-maven-plugin/index.html
+            </div>
+        </div>
+
+        <div class="section info">
+            <h2>📊 Fonctionnalités des Rapports</h2>
+            
+            <h3>Extent Reports :</h3>
+            <ul>
+                <li>Rapports HTML avec graphiques</li>
+                <li>Captures d'écran intégrées</li>
+                <li>Logs détaillés par test</li>
+                <li>Informations système</li>
+            </ul>
+            
+            <h3>Allure Reports :</h3>
+            <ul>
+                <li>Interface interactive moderne</li>
+                <li>Historique des exécutions</li>
+                <li>Catégorisation par sévérité</li>
+                <li>Graphiques de tendances</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Utilisation dans vos Tests</h2>
+            <p>Pour utiliser les rapports dans vos tests existants :</p>
+            
+            <h3>1. Ajouter les annotations :</h3>
+            <div class="code">
+@Listeners({ReportListener.class})<br>
+public class VotreTest {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@Test<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@Description("Description de votre test")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;@Severity(SeverityLevel.CRITICAL)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;public void votreTest() { ... }<br>
+}
+            </div>
+            
+            <h3>2. Initialiser les rapports :</h3>
+            <div class="code">
+@BeforeSuite<br>
+public void setUp() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ExtentReportManager.initReports();<br>
+}<br><br>
+@AfterSuite<br>
+public void tearDown() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ExtentReportManager.flushReports();<br>
+}
+            </div>
+        </div>
+
+        <div class="section success">
+            <h2>🎉 Prêt à Utiliser !</h2>
+            <p>Vos rapports de test sont maintenant configurés. Exécutez vos tests pour voir les rapports générés automatiquement.</p>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" class="btn btn-primary" onclick="alert('Exécutez: mvn clean test')">Lancer les Tests</a>
+                <a href="#" class="btn btn-success" onclick="alert('Ouvrir: test-output/ExtentReport.html')">Voir Extent Report</a>
+                <a href="#" class="btn btn-info" onclick="alert('Exécutez: mvn allure:serve')">Voir Allure Report</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

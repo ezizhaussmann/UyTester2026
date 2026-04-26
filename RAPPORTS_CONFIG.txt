@@ -1,0 +1,70 @@
+CONFIGURATION DES RAPPORTS DE TEST - RÉSUMÉ
+==========================================
+
+✅ EXTENT REPORTS & ALLURE REPORTS CONFIGURÉS AVEC SUCCÈS
+
+📁 FICHIERS CRÉÉS :
+------------------
+1. ExtentReportManager.java - Gestionnaire des rapports Extent
+2. ReportListener.java - Listener unifié pour les deux rapports  
+3. SimpleReportTest.java - Test de démonstration
+4. test-reports.xml - Configuration TestNG
+5. allure.properties - Configuration Allure
+6. README_RAPPORTS.html - Guide d'utilisation
+
+🔧 DÉPENDANCES AJOUTÉES :
+------------------------
+- Extent Reports 5.1.2
+- Allure TestNG 2.29.1
+- Plugin Maven Allure
+
+🚀 COMMENT UTILISER :
+--------------------
+
+1. EXÉCUTER LES TESTS :
+   mvn clean test -Dsurefire.suiteXmlFiles=test-reports.xml
+
+2. VOIR LE RAPPORT EXTENT :
+   Ouvrir : test-output/ExtentReport.html
+
+3. VOIR LE RAPPORT ALLURE :
+   mvn allure:serve
+   (ou mvn allure:report puis ouvrir target/site/allure-maven-plugin/index.html)
+
+📊 FONCTIONNALITÉS :
+-------------------
+✓ Rapports HTML détaillés (Extent)
+✓ Interface interactive moderne (Allure)
+✓ Captures d'écran automatiques en cas d'échec
+✓ Logs détaillés par test
+✓ Informations système
+✓ Graphiques et statistiques
+✓ Historique des exécutions (Allure)
+
+🎯 POUR VOS TESTS EXISTANTS :
+----------------------------
+Ajoutez simplement ces annotations à vos classes de test :
+
+@Listeners({ReportListener.class})
+public class VotreTest {
+    
+    @BeforeSuite
+    public void setUp() {
+        ExtentReportManager.initReports();
+    }
+    
+    @Test
+    @Description("Description de votre test")
+    @Severity(SeverityLevel.CRITICAL)
+    public void votreTest() {
+        // Votre code de test
+    }
+    
+    @AfterSuite
+    public void tearDown() {
+        ExtentReportManager.flushReports();
+    }
+}
+
+🎉 CONFIGURATION TERMINÉE !
+Les rapports seront générés automatiquement à chaque exécution de test.

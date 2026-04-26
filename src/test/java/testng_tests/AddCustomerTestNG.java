@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestContext;
 import org.testng.annotations.*;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -33,7 +34,7 @@ public class AddCustomerTestNG {
 
     // ── Exécuté avant chaque test ─────────────────────────────────────────────
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp(ITestContext context) throws Exception {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
@@ -43,18 +44,15 @@ public class AddCustomerTestNG {
         ));
         driver = new ChromeDriver(options);
         wait   = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        // Login
         driver.get("https://demo.cubecart.com/admin_5xArPd.php");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys("cubecart");
         driver.findElement(By.id("password")).sendKeys("cubecart");
         driver.findElement(By.id("login")).click();
-
-        // Fermer l'alerte Chrome
         Thread.sleep(2000);
         Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        context.setAttribute("driver", driver);
         System.out.println("✅ Login réussi.");
     }
 

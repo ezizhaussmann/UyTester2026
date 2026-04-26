@@ -1,10 +1,14 @@
 package pageobjectdesignpattern_log;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 /**
  * @created : 25/04/2026,17:58,sam.
@@ -12,6 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ProductsPage {
     ChromeDriver driver;
     FunctionLibrary functionLibrary;
+    private String productName;
     @FindBy(linkText = "Add Product")
     WebElement addProductLink;
     @FindBy(id = "name")
@@ -39,7 +44,8 @@ public class ProductsPage {
     public void addProduct() {
         functionLibrary.waitForElementPresent(addProductLink);
         addProductLink.click();
-        productNameField.sendKeys(functionLibrary.generateFakeProductName());
+        productName = functionLibrary.generateFakeProductName();
+        productNameField.sendKeys(productName);
         productCodeField.sendKeys(functionLibrary.generateFakeProductCode());
         stockLevelField.sendKeys(functionLibrary.generateFakeStockLevel());
         saveButton.click();
@@ -58,6 +64,17 @@ public class ProductsPage {
 
     }
 
+        public void deleteLastProduct() {
+            List<WebElement> allDeleteIcons = driver.findElements(By.cssSelector("i.fa-trash"));
+            WebElement lastDeleteIcon = allDeleteIcons.get(allDeleteIcons.size() - 1);
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", lastDeleteIcon);
+            functionLibrary.waitForElementPresent(lastDeleteIcon);
+            lastDeleteIcon.click();
+            functionLibrary.waitForAlertPresent();
+            Alert alert = driver.switchTo().alert();
+            alert.accept();
+        }
+
         public void deleteProduct() {
             functionLibrary.waitForElementPresent(deleteIcon);
             deleteIcon.click();
@@ -65,6 +82,14 @@ public class ProductsPage {
             Alert alert = driver.switchTo().alert();
             alert.accept();
         }
+        public void deleteOwnProduct() {
+        WebElement deleteIcon = driver.findElement(By.xpath(String.format("//*[contains(text(),'%s')]//following::td[10]//a[contains(@class,'delete')]", productName)));
+        deleteIcon.click();
+        functionLibrary.waitForAlertPresent();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+        }
+
 
         public boolean verifyProductDelete() {
         functionLibrary.waitForElementPresent(getProductDeleteSuccessMessage);

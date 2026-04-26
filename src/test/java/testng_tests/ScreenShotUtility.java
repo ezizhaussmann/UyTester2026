@@ -3,7 +3,6 @@ package testng_tests;
 import org.apache.commons.io.FileUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,10 +13,10 @@ import java.io.IOException;
 public class ScreenShotUtility {
     public File captureScreen(String fileName, ChromeDriver driver) {
         File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        DateTimeFormatter formatter = DateTimeFormat.forPattern("dd-MM-yy_hh-mm");
-        String timestamp = new DateTime().toString(formatter);
-        fileName = timestamp + "_" + fileName;
-        File destFile = new File("screenshots" + File.separator + fileName + ".png");
+        String timestamp = new DateTime().toString(DateTimeFormat.forPattern("dd-MM-yy_hh-mm"));
+        File dir = new File("screenshots");
+        if (!dir.exists()) dir.mkdirs();
+        File destFile = new File(dir, timestamp + "_" + fileName + ".png");
         try {
             FileUtils.copyFile(srcFile, destFile);
         } catch (IOException e) {
